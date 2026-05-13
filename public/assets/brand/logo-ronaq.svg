@@ -1,0 +1,14 @@
+<svg width="500" height="140" viewBox="0 0 500 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Ronaq Company logo</title>
+  <desc id="desc">Ronaq Company for importing mother and child supplies</desc>
+  <rect width="500" height="140" rx="8" fill="#F8FBF7"/>
+  <g transform="translate(374 24)">
+    <path d="M56.2 7.8C73.2 15.4 84.5 31.1 85.8 48.7C87.1 66.5 77.6 83.5 60.3 95.9C64.8 79.2 62.7 65.9 54.2 56.2C48.5 49.8 41.3 46.4 33.1 45.9C39.2 34.7 47 22.5 56.2 7.8Z" fill="#556354"/>
+    <path d="M30.3 49.6C22.5 54.8 16.7 62.4 13.8 72.4C11.2 66.5 9.6 59.8 9.4 53.4C9.1 42.2 14 33.5 24.1 27.3C31.2 22.8 39.8 22.2 47.9 25.3C38.8 33.3 33.1 41.3 30.3 49.6Z" fill="#6F7C69"/>
+    <circle cx="23.5" cy="18.5" r="8.6" fill="#556354"/>
+    <circle cx="46.5" cy="6.8" r="6.8" fill="#6F7C69"/>
+  </g>
+  <text x="32" y="59" fill="#566050" font-family="Segoe UI, Arial, sans-serif" font-size="34" letter-spacing=".2">Ronaq Company</text>
+  <text x="33" y="88" fill="#6D7669" font-family="Segoe UI, Arial, sans-serif" font-size="16">For Importing Mother and Child Supplies</text>
+  <text x="34" y="118" fill="#566050" font-family="Tahoma, Arial, sans-serif" font-size="23" direction="rtl">رونق</text>
+</svg>

@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ronaq Company | Mother and Child Supplies</title>
+    <meta name="description" content="Ronaq Company imports mother and child supplies and represents Mindus Turkey products.">
+    <meta name="theme-color" content="#2f533e">
+    <link rel="icon" href="/assets/brand/ronaq-mark.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/brand/ronaq-mark.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ronaq Company">
+    <meta property="og:title" content="Ronaq Company | Mother and Child Supplies">
+    <meta property="og:description" content="Exclusive agent for Mindus Turkey. Mother and child supplies available by request in Tripoli.">
+    <meta property="og:image" content="/assets/hero-mindus.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ar_LY">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ronaq Company | Mother and Child Supplies">
+    <meta name="twitter:description" content="Exclusive agent for Mindus Turkey. Send product requests with your shop location.">
+    <meta name="twitter:image" content="/assets/hero-mindus.jpg">
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const savedTheme = params.get("theme") || localStorage.getItem("ronaq-theme");
+      if (savedTheme) document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+    </script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Ronaq Company home">
+        <span class="brand-icon">
+          <img src="/assets/brand/ronaq-mark.png" alt="Ronaq Company logo">
+        </span>
+        <span class="brand-text">
+          <strong>Ronaq</strong>
+          <small>رونق</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#products" data-i18n="nav.products">Products</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button class="lang-button is-active" type="button" id="languageToggle" aria-label="Switch language" title="Switch language">&#x1F310;</button>
+        </div>
+        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch color mode" title="Switch color mode">&#x1F319;</button>
+        <button class="button button-primary button-small" type="button" data-open-request data-i18n="actions.request">Request item</button>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Exclusive agent for Mindus Turkey</p>
+          <h1 id="hero-title" data-i18n="hero.title">Ronaq Company for mother and child supplies</h1>
+          <p class="hero-copy" data-i18n="hero.copy">Trusted importing, curated personal care, and direct item requests for shops, pharmacies, and shopping centers.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" type="button" data-open-request data-i18n="actions.request">Request item</button>
+            <a class="button button-secondary" href="#products" data-i18n="actions.viewProducts">View products</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-info" aria-label="Company contact summary">
+        <a href="tel:+218918808125">
+          <span data-i18n="info.call">Call</span>
+          <strong dir="ltr">091 880 8125</strong>
+        </a>
+        <a href="tel:+218918452949">
+          <span data-i18n="info.sales">Sales</span>
+          <strong dir="ltr">091 845 2949</strong>
+        </a>
+        <a href="tel:+218926299113">
+          <span data-i18n="info.support">Support</span>
+          <strong dir="ltr">092 629 9113</strong>
+        </a>
+        <a class="map-portal" href="https://maps.app.goo.gl/USK56FGXNNzqEkki9" target="_blank" rel="noopener">
+          <span data-i18n="info.location">Location</span>
+          <strong data-i18n="info.tripoli">Tripoli, Al-Nasr Street</strong>
+          <small data-i18n="info.openMap">Open in Google Maps</small>
+        </a>
+      </section>
+
+      <section class="section section-intro" id="about">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="about.eyebrow">Ronaq | رونق</p>
+          <h2 data-i18n="about.title">Imported care essentials with a cleaner, calmer shopping experience.</h2>
+        </div>
+        <div class="intro-grid">
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">01</span>
+            <h3 data-i18n="about.feature1Title">Exclusive Mindus access</h3>
+            <p data-i18n="about.feature1Copy">Ronaq represents Mindus Turkey products for retailers looking for quality cosmetics and personal care lines.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">02</span>
+            <h3 data-i18n="about.feature2Title">Retail request flow</h3>
+            <p data-i18n="about.feature2Copy">Shops can request any item and include their shopping center or store location for faster follow-up.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">03</span>
+            <h3 data-i18n="about.feature3Title">Mother and child focus</h3>
+            <p data-i18n="about.feature3Copy">The catalogue is presented for families, pharmacies, and stores that need reliable care supplies.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section products-section" id="products">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="products.eyebrow">Mindus product selection</p>
+          <h2 data-i18n="products.title">Popular items available by request</h2>
+        </div>
+
+        <div class="catalogue-spotlight" aria-label="Popular baby supply requests">
+          <div class="spotlight-copy">
+            <p class="eyebrow" data-i18n="spotlight.eyebrow">Fast shop requests</p>
+            <h3 data-i18n="spotlight.title">Baby essentials are ready in the same request flow.</h3>
+            <p data-i18n="spotlight.copy">Diapers, sanitized tissues, wipes, feeding items, and Mindus care products can all be requested with the shop location.</p>
+            <button class="button button-primary" type="button" data-open-request data-i18n="actions.request">Request item</button>
+          </div>
+          <div class="spotlight-stage">
+            <img class="spotlight-main" src="/assets/products/baby-diapers.png" alt="Baby diapers">
+            <img class="spotlight-card spotlight-card-one" src="/assets/products/sanitized-tissues.png" alt="Sanitized tissues">
+            <img class="spotlight-card spotlight-card-two" src="/assets/products/baby-feeding.png" alt="Baby feeding supplies">
+          </div>
+        </div>
+
+        <div class="category-tabs" role="tablist" aria-label="Product categories">
+          <button class="tab is-active" type="button" data-filter="all" data-i18n="filters.all">All</button>
+          <button class="tab" type="button" data-filter="serum" data-i18n="filters.serum">Serums</button>
+          <button class="tab" type="button" data-filter="hair" data-i18n="filters.hair">Hair care</button>
+          <button class="tab" type="button" data-filter="skin" data-i18n="filters.skin">Skin care</button>
+          <button class="tab" type="button" data-filter="daily" data-i18n="filters.daily">Daily care</button>
+          <button class="tab" type="button" data-filter="baby" data-i18n="filters.baby">Baby essentials</button>
+          <button class="tab" type="button" data-filter="hygiene" data-i18n="filters.hygiene">Hygiene</button>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="request-band">
+        <div>
+          <p class="eyebrow" data-i18n="requestBand.eyebrow">Need a specific item?</p>
+          <h2 data-i18n="requestBand.title">Send the product name and your shop location.</h2>
+        </div>
+        <button class="button button-light" type="button" data-open-request data-i18n="actions.openRequest">Open request form</button>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+          <h2 data-i18n="contact.title">Ronaq Company</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-block">
+            <h3 data-i18n="contact.phones">Phone numbers</h3>
+            <a href="tel:+218918808125" dir="ltr">091 880 8125</a>
+            <a href="tel:+218918452949" dir="ltr">091 845 2949</a>
+            <a href="tel:+218926299113" dir="ltr">092 629 9113</a>
+          </div>
+          <div class="contact-block">
+            <h3 data-i18n="contact.addressTitle">Address</h3>
+            <a class="address-link map-link" href="https://maps.app.goo.gl/USK56FGXNNzqEkki9" target="_blank" rel="noopener">
+              <span data-i18n="contact.address">Al Wehda Sports and Cultural Club Building, Second Floor, Al-Nasr Street, Tripoli</span>
+              <small data-i18n="info.openMap">Open in Google Maps</small>
+            </a>
+          </div>
+          <div class="contact-block">
+            <h3 data-i18n="contact.companyLine">Company line</h3>
+            <p data-i18n="contact.tagline">For Importing Mother and Child Supplies</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="#home" aria-label="Ronaq Company home">
+        <span class="brand-icon">
+          <img src="/assets/brand/ronaq-mark.png" alt="Ronaq Company logo">
+        </span>
+        <span class="brand-text">
+          <strong>Ronaq</strong>
+          <small>رونق</small>
+        </span>
+      </a>
+      <p data-i18n="footer.copy">Ronaq Company. Exclusive agent for Mindus Turkey.</p>
+    </footer>
+
+    <div class="modal" id="requestModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-request></div>
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="requestTitle">
+        <button class="icon-button modal-close" type="button" data-close-request aria-label="Close request form">×</button>
+        <p class="eyebrow" data-i18n="modal.eyebrow">Product request</p>
+        <h2 id="requestTitle" data-i18n="modal.title">Tell us what you need</h2>
+
+        <form class="request-form" id="requestForm">
+          <label>
+            <span data-i18n="form.name">Name</span>
+            <input name="customerName" autocomplete="name" required>
+          </label>
+          <label>
+            <span data-i18n="form.phone">Phone / WhatsApp</span>
+            <input name="phone" autocomplete="tel" required>
+          </label>
+          <label>
+            <span data-i18n="form.item">Requested item</span>
+            <input name="item" id="requestItem" required>
+          </label>
+          <label>
+            <span data-i18n="form.quantity">Quantity</span>
+            <input name="quantity" inputmode="numeric">
+          </label>
+          <label>
+            <span data-i18n="form.shopName">Shop name</span>
+            <input name="shopName">
+          </label>
+          <label>
+            <span data-i18n="form.shopLocation">Shop location / shopping center</span>
+            <input name="shopLocation" required>
+          </label>
+          <label>
+            <span data-i18n="form.city">City</span>
+            <input name="city">
+          </label>
+          <label class="form-wide">
+            <span data-i18n="form.notes">Notes</span>
+            <textarea name="notes" rows="4"></textarea>
+          </label>
+          <button class="button button-primary form-wide" type="submit" data-i18n="form.submit">Send request</button>
+          <p class="form-message form-wide" id="formMessage" role="status"></p>
+        </form>
+
+        <div class="request-success" id="requestSuccess" tabindex="-1" hidden>
+          <span class="success-mark" aria-hidden="true">✓</span>
+          <h3 data-i18n="requestSuccess.title">Request sent to Ronaq</h3>
+          <p data-i18n="requestSuccess.copy">Your request was sent. Ronaq will contact you soon using the phone number you provided.</p>
+          <div class="success-actions">
+            <a class="button button-secondary" href="tel:+218918808125" data-i18n="requestSuccess.call">Call Ronaq</a>
+            <button class="button button-primary" type="button" data-new-request data-i18n="requestSuccess.another">Send another request</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
