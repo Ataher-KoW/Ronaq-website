@@ -1,0 +1,17 @@
+{
+  "name": "Ronaq Company",
+  "short_name": "Ronaq",
+  "description": "Ronaq Company for importing mother and child supplies.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fffdf7",
+  "theme_color": "#2f533e",
+  "icons": [
+    {
+      "src": "assets/brand/ronaq-mark.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

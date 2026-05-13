@@ -10,6 +10,20 @@ npm start
 
 Open `http://localhost:4173`.
 
+## GitHub Pages
+
+This repo includes a GitHub Actions workflow that deploys the static site from `public/` to GitHub Pages on every push to `main`.
+
+After pushing, open the repo on GitHub, go to **Settings > Pages**, and set **Source** to **GitHub Actions**.
+
+The public site will be:
+
+```text
+https://ataher-kow.github.io/Ronaq-website/
+```
+
+GitHub Pages is static hosting. It will show the website, products, language switcher, and contact links, but it cannot run `server.js` or the Telegram `/api/request` endpoint. Keep `server.js` for local/private hosting, or move the Telegram request endpoint to a small backend such as Cloudflare Workers, Render, Railway, or Vercel.
+
 ## Telegram setup
 
 Create a `.env` file based on `.env.example`:

@@ -350,7 +350,7 @@ textarea {
   color: white;
   background:
     var(--hero-scrim),
-    url("/assets/hero-mindus.jpg") center / cover no-repeat;
+    url("assets/hero-mindus.jpg") center / cover no-repeat;
   background-position: center, center calc(50% + var(--scroll-y, 0px));
   background-size: cover, cover;
   overflow: hidden;
@@ -530,7 +530,7 @@ h1 {
   overflow: hidden;
   background:
     linear-gradient(90deg, var(--cream) 0 48%, rgba(255, 253, 247, .68)),
-    url("/assets/products/baby-care.png") right center / min(52vw, 720px) no-repeat;
+    url("assets/products/baby-care.png") right center / min(52vw, 720px) no-repeat;
 }
 
 .section-intro::before {
@@ -1045,6 +1045,55 @@ textarea:focus {
   color: #a33a2f;
 }
 
+.request-success {
+  display: grid;
+  justify-items: start;
+  gap: 18px;
+  padding: clamp(20px, 4vw, 34px);
+  border: 1px solid color-mix(in srgb, var(--green-700) 24%, transparent);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--mint) 48%, transparent), transparent 58%),
+    var(--surface-soft);
+}
+
+.request-success[hidden] {
+  display: none;
+}
+
+.success-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--green-800);
+  color: var(--cream);
+  font-size: 28px;
+  font-weight: 900;
+  box-shadow: 0 14px 30px rgba(47, 83, 62, .22);
+}
+
+.request-success h3 {
+  margin: 0;
+  color: var(--green-900);
+  font-size: clamp(26px, 4vw, 40px);
+  line-height: 1.08;
+}
+
+.request-success p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .reveal {
   opacity: 0;
   clip-path: inset(0 0 14% 0);
@@ -1263,7 +1312,7 @@ body[dir="rtl"] .eyebrow {
   .section-intro {
     background:
       linear-gradient(180deg, var(--cream) 0 58%, rgba(255, 253, 247, .78)),
-      url("/assets/products/baby-care.png") center bottom / 92vw no-repeat;
+      url("assets/products/baby-care.png") center bottom / 92vw no-repeat;
     padding-bottom: 260px;
   }
 

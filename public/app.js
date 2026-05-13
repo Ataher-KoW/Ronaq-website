@@ -234,7 +234,7 @@ const translations = {
 const products = [
   {
     category: "serum",
-    image: "/assets/products/matcha-serum.png",
+    image: "assets/products/matcha-serum.png",
     en: {
       name: "Mindus Matcha Serum 30 ml",
       copy: "Hydration, tone support, and antioxidant care from the Mindus matcha line."
@@ -246,7 +246,7 @@ const products = [
   },
   {
     category: "serum",
-    image: "/assets/products/vitamin-c-serum.jpg",
+    image: "assets/products/vitamin-c-serum.jpg",
     en: {
       name: "Mindus Vitamin C Serum 30 ml",
       copy: "Brightening and tone-evening serum with Vitamin C and ferulic acid."
@@ -258,7 +258,7 @@ const products = [
   },
   {
     category: "serum",
-    image: "/assets/products/retinol-serum.png",
+    image: "assets/products/retinol-serum.png",
     en: {
       name: "Mindus Retinol Night Serum 30 ml",
       copy: "Night care serum for repair-focused routines."
@@ -270,7 +270,7 @@ const products = [
   },
   {
     category: "skin",
-    image: "/assets/products/cleanser.jpg",
+    image: "assets/products/cleanser.jpg",
     en: {
       name: "Mindus Hydrating Cleansing Gel",
       copy: "Gentle cleansing support for dry and combination skin routines."
@@ -282,7 +282,7 @@ const products = [
   },
   {
     category: "skin",
-    image: "/assets/products/sunscreen.jpg",
+    image: "assets/products/sunscreen.jpg",
     en: {
       name: "Mindus Sunscreen Fluid",
       copy: "Daily sun protection in a light fluid texture."
@@ -294,7 +294,7 @@ const products = [
   },
   {
     category: "daily",
-    image: "/assets/products/hyaluronic-body-cream.jpg",
+    image: "assets/products/hyaluronic-body-cream.jpg",
     en: {
       name: "Mindus Hyaluronic Acid Body Cream 200 ml",
       copy: "Moisturizing body cream for smoother-feeling skin."
@@ -306,7 +306,7 @@ const products = [
   },
   {
     category: "hair",
-    image: "/assets/products/shampoo-collagen.jpg",
+    image: "assets/products/shampoo-collagen.jpg",
     en: {
       name: "Mindus Collagen Shampoo",
       copy: "Hair care option for regular retail and pharmacy requests."
@@ -318,7 +318,7 @@ const products = [
   },
   {
     category: "hair",
-    image: "/assets/products/bi-phase-spray.jpg",
+    image: "assets/products/bi-phase-spray.jpg",
     en: {
       name: "Mindus Bi Phase Hair Spray 400 ml",
       copy: "Easy-combing spray designed to reduce static and support styling."
@@ -330,7 +330,7 @@ const products = [
   },
   {
     category: "daily",
-    image: "/assets/products/roll-on.jpg",
+    image: "assets/products/roll-on.jpg",
     en: {
       name: "Mindus Antiperspirant Roll On 50 ml",
       copy: "Daily roll-on deodorant for personal care shelves."
@@ -342,7 +342,7 @@ const products = [
   },
   {
     category: "hair",
-    image: "/assets/products/keratin-spray.jpg",
+    image: "assets/products/keratin-spray.jpg",
     en: {
       name: "Mindus Keratin & Argan Hair Spray 200 ml",
       copy: "Keratin and argan care spray for hair routines."
@@ -354,7 +354,7 @@ const products = [
   },
   {
     category: "baby",
-    image: "/assets/products/baby-diapers.png",
+    image: "assets/products/baby-diapers.png",
     en: {
       name: "Baby Diapers",
       copy: "Soft absorbent diapers in requested sizes for stores and pharmacies."
@@ -366,7 +366,7 @@ const products = [
   },
   {
     category: "hygiene",
-    image: "/assets/products/sanitized-tissues.png",
+    image: "assets/products/sanitized-tissues.png",
     en: {
       name: "Sanitized Kleenex Tissues",
       copy: "Sterilized tissue packs and gentle hygiene options for families."
@@ -378,7 +378,7 @@ const products = [
   },
   {
     category: "hygiene",
-    image: "/assets/products/sanitized-tissues.png",
+    image: "assets/products/sanitized-tissues.png",
     en: {
       name: "Gentle Baby Wipes",
       copy: "Soft wipes for changing time, travel, and daily baby care."
@@ -390,7 +390,7 @@ const products = [
   },
   {
     category: "baby",
-    image: "/assets/products/baby-feeding.png",
+    image: "assets/products/baby-feeding.png",
     en: {
       name: "Baby Bottles and Pacifiers",
       copy: "Feeding basics available by request for baby care shelves."
@@ -402,7 +402,7 @@ const products = [
   },
   {
     category: "baby",
-    image: "/assets/products/baby-care.png",
+    image: "assets/products/baby-care.png",
     en: {
       name: "Baby Care Essentials",
       copy: "Powder, lotion, bath items, and changing-time basics on request."
