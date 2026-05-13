@@ -19,7 +19,7 @@ After pushing, open the repo on GitHub, go to **Settings > Pages**, and set **So
 The public site will be:
 
 ```text
-https://ataher-kow.github.io/Ronaq-website/
+https://ataher-kow.github.io/Ronaq-website/public/
 ```
 
 GitHub Pages is static hosting. It will show the website, products, language switcher, and contact links, but it cannot run `server.js` or the Telegram `/api/request` endpoint. Keep `server.js` for local/private hosting, or move the Telegram request endpoint to a small backend such as Cloudflare Workers, Render, Railway, or Vercel.
