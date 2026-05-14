@@ -26,6 +26,25 @@ GitHub Pages is static hosting. It will show the website, products, language swi
 
 On GitHub Pages, the request form falls back to WhatsApp using `public/config.js` so customers can still send the prepared request message. To connect a real backend later, set `requestEndpoint` in `public/config.js` to your deployed API URL.
 
+## Telegram backend for deployed site
+
+The repo includes a Vercel-compatible backend at `api/request.js`.
+
+Deploy this repo to Vercel, then add these environment variables in Vercel:
+
+```env
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
+```
+
+After Vercel gives you a URL, set `requestEndpoint` in `public/config.js` to:
+
+```js
+https://your-vercel-project.vercel.app/api/request
+```
+
+Then commit and push. Requests from GitHub Pages will go directly to Telegram.
+
 ## Telegram setup
 
 Create a `.env` file based on `.env.example`:
