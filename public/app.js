@@ -102,6 +102,8 @@ const translations = {
     requestSuccess: {
       title: "Request sent to Ronaq",
       copy: "Your request was sent. Ronaq will contact you soon using the phone number you provided.",
+      whatsappCopy: "GitHub Pages cannot send directly to Telegram, so WhatsApp opened with your request. Tap send there to deliver it to Ronaq.",
+      whatsapp: "Send on WhatsApp",
       call: "Call Ronaq",
       another: "Send another request"
     },
@@ -217,6 +219,8 @@ const translations = {
     requestSuccess: {
       title: "تم إرسال الطلب إلى رونق",
       copy: "تم إرسال طلبك. سنتواصل معك قريبا على رقم الهاتف الذي كتبته.",
+      whatsappCopy: "استضافة GitHub Pages لا ترسل الطلبات إلى تيليجرام مباشرة، لذلك تم فتح واتساب برسالة الطلب. اضغط إرسال هناك لإرسالها إلى رونق.",
+      whatsapp: "إرسال عبر واتساب",
       call: "اتصل برونق",
       another: "إرسال طلب آخر"
     },
@@ -424,6 +428,8 @@ const modal = document.querySelector("#requestModal");
 const requestForm = document.querySelector("#requestForm");
 const requestItemInput = document.querySelector("#requestItem");
 const requestSuccess = document.querySelector("#requestSuccess");
+const requestSuccessCopy = requestSuccess.querySelector("p");
+const whatsappRequestLink = document.querySelector("#whatsappRequestLink");
 const formMessage = document.querySelector("#formMessage");
 const themeToggle = document.querySelector("#themeToggle");
 const languageToggle = document.querySelector("#languageToggle");
@@ -476,19 +482,37 @@ requestForm.addEventListener("submit", async (event) => {
   payload.language = currentLanguage.toUpperCase();
 
   try {
-    const response = await fetch("/api/request", {
+    const endpoint = getRequestEndpoint();
+
+    if (!endpoint) {
+      const whatsappUrl = buildWhatsAppUrl(payload);
+      window.open(whatsappUrl, "_blank", "noopener");
+      requestForm.reset();
+      showRequestSuccess("whatsapp", whatsappUrl);
+      return;
+    }
+
+    const response = await fetch(endpoint, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(payload)
     });
 
     if (!response.ok) {
+      if ([404, 405].includes(response.status)) {
+        const whatsappUrl = buildWhatsAppUrl(payload);
+        window.open(whatsappUrl, "_blank", "noopener");
+        requestForm.reset();
+        showRequestSuccess("whatsapp", whatsappUrl);
+        return;
+      }
+
       const result = await response.json().catch(() => ({}));
       throw new Error(result.error || "Request failed");
     }
 
     requestForm.reset();
-    showRequestSuccess();
+    showRequestSuccess("api", buildWhatsAppUrl(payload));
   } catch (error) {
     formMessage.classList.add("is-error");
     formMessage.textContent = error.message.includes("Telegram is not configured")
@@ -593,6 +617,30 @@ function closeRequestModal() {
   document.body.style.overflow = "";
 }
 
+function getRequestEndpoint() {
+  const configuredEndpoint = window.RONAQ_CONFIG?.requestEndpoint?.trim();
+  if (configuredEndpoint) return configuredEndpoint;
+  if (window.location.hostname.endsWith("github.io")) return "";
+  return "/api/request";
+}
+
+function buildWhatsAppUrl(payload) {
+  const number = window.RONAQ_CONFIG?.whatsappNumber || "218918808125";
+  const lines = [
+    currentLanguage === "ar" ? "طلب جديد من موقع رونق" : "New request from Ronaq website",
+    `${t("form.name")}: ${payload.customerName || "-"}`,
+    `${t("form.phone")}: ${payload.phone || "-"}`,
+    `${t("form.item")}: ${payload.item || "-"}`,
+    `${t("form.quantity")}: ${payload.quantity || "-"}`,
+    `${t("form.shopName")}: ${payload.shopName || "-"}`,
+    `${t("form.shopLocation")}: ${payload.shopLocation || "-"}`,
+    `${t("form.city")}: ${payload.city || "-"}`,
+    `${t("form.notes")}: ${payload.notes || "-"}`
+  ];
+
+  return `https://wa.me/${number}?text=${encodeURIComponent(lines.join("\n"))}`;
+}
+
 function showRequestForm() {
   requestForm.hidden = false;
   requestSuccess.hidden = true;
@@ -600,11 +648,13 @@ function showRequestForm() {
   formMessage.textContent = "";
 }
 
-function showRequestSuccess() {
+function showRequestSuccess(mode = "api", whatsappUrl = "") {
   requestForm.hidden = true;
   requestSuccess.hidden = false;
   formMessage.classList.remove("is-error");
   formMessage.textContent = "";
+  requestSuccessCopy.textContent = mode === "whatsapp" ? t("requestSuccess.whatsappCopy") : t("requestSuccess.copy");
+  if (whatsappUrl) whatsappRequestLink.href = whatsappUrl;
   requestSuccess.focus();
 }
 

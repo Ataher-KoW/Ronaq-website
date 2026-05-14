@@ -24,6 +24,8 @@ https://ataher-kow.github.io/Ronaq-website/public/
 
 GitHub Pages is static hosting. It will show the website, products, language switcher, and contact links, but it cannot run `server.js` or the Telegram `/api/request` endpoint. Keep `server.js` for local/private hosting, or move the Telegram request endpoint to a small backend such as Cloudflare Workers, Render, Railway, or Vercel.
 
+On GitHub Pages, the request form falls back to WhatsApp using `public/config.js` so customers can still send the prepared request message. To connect a real backend later, set `requestEndpoint` in `public/config.js` to your deployed API URL.
+
 ## Telegram setup
 
 Create a `.env` file based on `.env.example`:
