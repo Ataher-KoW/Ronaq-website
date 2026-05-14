@@ -1,6 +1,6 @@
 # Ronaq Company Website
 
-Bilingual English/Arabic website for Ronaq Company with a product request popup and Telegram delivery.
+Bilingual English/Arabic website for Ronaq Company with a product request popup, WhatsApp fallback, and optional Telegram delivery through Cloudflare Workers.
 
 ## Run locally
 
@@ -19,31 +19,54 @@ After pushing, open the repo on GitHub, go to **Settings > Pages**, and set **So
 The public site will be:
 
 ```text
-https://ataher-kow.github.io/Ronaq-website/public/
+https://ronaq.ly/
+https://ataher-kow.github.io/Ronaq-website/
 ```
 
-GitHub Pages is static hosting. It will show the website, products, language switcher, and contact links, but it cannot run `server.js` or the Telegram `/api/request` endpoint. Keep `server.js` for local/private hosting, or move the Telegram request endpoint to a small backend such as Cloudflare Workers, Render, Railway, or Vercel.
+GitHub Pages is static hosting. It shows the website, products, language switcher, request popup, and contact links, but it cannot safely run Telegram bot code because the bot token must stay private.
 
-On GitHub Pages, the request form falls back to WhatsApp using `public/config.js` so customers can still send the prepared request message. To connect a real backend later, set `requestEndpoint` in `public/config.js` to your deployed API URL.
+Until a backend URL is configured, the request form falls back to WhatsApp using `public/config.js` so customers can still send a prepared request message.
 
-## Telegram backend for deployed site
+## Cloudflare Worker for Telegram
 
-The repo includes a Vercel-compatible backend at `api/request.js`.
+Best setup for this project:
 
-Deploy this repo to Vercel, then add these environment variables in Vercel:
+1. Keep the website on GitHub Pages.
+2. Create one Cloudflare Worker for the Telegram request endpoint.
+3. Put the Worker URL in `public/config.js`.
+
+Cloudflare setup:
+
+1. Open Cloudflare Dashboard.
+2. Go to **Workers & Pages**.
+3. Create a new Worker, for example `ronaq-telegram`.
+4. Deploy the starter Worker once.
+5. Open **Edit Code** and replace the code with `cloudflare-worker/request-worker.js`.
+6. Deploy again.
+7. Open the Worker's **Settings > Variables and Secrets**.
+8. Add these as secrets:
 
 ```env
 TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_CHAT_ID=your_chat_id
 ```
 
-After Vercel gives you a URL, set `requestEndpoint` in `public/config.js` to:
+Test the Worker from PowerShell:
 
-```js
-https://your-vercel-project.vercel.app/api/request
+```powershell
+Invoke-RestMethod -Uri "https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev" -Method Post -ContentType "application/json" -Body '{"customerName":"Test","phone":"0910000000","item":"Diapers","shopLocation":"Tripoli"}'
 ```
 
-Then commit and push. Requests from GitHub Pages will go directly to Telegram.
+If Telegram receives the test request, update `public/config.js`:
+
+```js
+window.RONAQ_CONFIG = {
+  requestEndpoint: "https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev",
+  whatsappNumber: "218918808125"
+};
+```
+
+After that, requests from the website will appear in the Telegram chat configured by `TELEGRAM_CHAT_ID`. No DNS change is required when using the `workers.dev` URL.
 
 ## Telegram setup
 
